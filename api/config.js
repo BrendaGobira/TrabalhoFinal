@@ -10,4 +10,4 @@ const {
 module.exports = {
   port: PORT,
   urlConnection: PG_CONNECTION_STRING
-} 
+}
