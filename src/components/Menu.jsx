@@ -1,15 +1,15 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 export default function Menu(){
- return (
- <header>
-    <nav>
+  return (
+    <header>
+      <nav>
         <ul>
-            <li><Link to="/"> Início </Link> </li>
-            <li><Link to="/usuarios"> Pessoas </Link></li>
-            <li><Link to="/sobre"> Sobres </Link></li>
+          <li><Link to="/"> Início </Link> </li>
+          <li><Link to="/usuarios"> Pessoas </Link></li>
+          <li><Link to="/sobre"> Sobres </Link></li>
         </ul>
-    </nav>
- </header>
- )
+      </nav>
+    </header>
+  )
 }

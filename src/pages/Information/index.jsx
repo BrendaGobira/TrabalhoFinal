@@ -1,39 +1,9 @@
-<!--
-INTEGRANTES:
-Brenda Gobira Valença - 2020025038
-Gabriela Emanuele de Araújo Amorim - 2020011260
--->
+import './Information.css';
 
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/informacao.css" />
-    <link rel="stylesheet" href="./assets/css/estilo.css" />
-    <script type="text/javascript" src="./assets/js/codigo.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="./assets/js/codigo.js"></script>
-    <title>MAIS INFORMAÇÃO</title>
-</head>
-
-<body>
-
-    <nav id="menu-horizontal">
-        <ul>
-            <li><a href="./index.html">INÍCIO</a></li>
-            <li><a href="./newProject.html">NOVO DESENHO</a></li>
-            <li><a href="./login.html">LOGIN</a></li>
-        </ul>
-    </nav>
-
-    <header>
-        <h1>Pixel Art</h1>
-    </header>
-    <div class="container">
+function Information() {
+  return (
+    <div style={{ marginTop: '90px' }}>
+      <div className="container">
         <h2>MOTIVAÇÃO</h2>
         <p>A Color Pixel é um site que oferece a criação de pinturas de pixel, impulsionado por uma variedade de
             motivações, incluindo expressão artística, nostalgia, simplicidade, acessibilidade, compartilhamento com a
@@ -41,45 +11,49 @@ Gabriela Emanuele de Araújo Amorim - 2020011260
             maneira única de expressar a criatividade, evocar nostalgia, simplificar a arte digital, compartilhar
             criações, personalizar imagens e, ao mesmo tempo, oferece diversão, relaxamento e oportunidades de
             aprendizado e ensino de conceitos de design gráfico.</p>
-    </div>
-    <div class="container">
+      </div>
+      <div className="container">
         <h2>COMO FUNCIONA?</h2>
         <p>Um site de pintura de pixel é onde você cria imagens com quadradinhos coloridos (pixels) escolhendo cores e
             pintando os pixels individualmente. É uma maneira divertida e acessível de fazer arte pixelada.</p>
-    </div>
+      </div>
 
-    <h3>Benefícios e Desafios da Pixel Art</h3>
-    <table>
-        <tr>
+      <h3>Benefícios e Desafios da Pixel Art</h3>
+      <table>
+        <thead>
+          <tr>
             <th>Benefícios</th>
             <th>Desafios</th>
-        </tr>
-        <tr>
+          </tr>
+        </thead>
+        <tbody style={{ backgroundColor: 'gray' }}>
+          <tr>
             <td>Estilo Único</td>
             <td>Limitações de Resolução</td>
-        </tr>
-        <tr>
+          </tr>
+          <tr>
             <td>Fácil de Começar</td>
             <td>Detalhes Finos</td>
-        </tr>
-        <tr>
+          </tr>
+          <tr>
             <td>Nostalgia</td>
             <td>Tempo Consumido</td>
-        </tr>
-        <tr>
+          </tr>
+          <tr>
             <td>Compartilhamento</td>
             <td>Aprendizado Constante</td>
-        </tr>
-        <tr>
+          </tr>
+          <tr>
             <td>Customização</td>
             <td>Limitações de Cores</td>
-        </tr>
-        <tr>
+          </tr>
+          <tr>
             <td>Criatividade</td>
             <td>Não é para todos</td>
-        </tr>
-    </table>
-
-</body>
-
-</html>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  )
+}
+export default Information

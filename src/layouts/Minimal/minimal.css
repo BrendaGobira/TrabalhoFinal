@@ -1,0 +1,25 @@
+/* LayoutStyles.css */
+
+.full-screen-container-minimal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  background: url('../../assets/img/img01.png') no-repeat center center fixed; 
+  background-size: cover;
+  padding-top: 90px;
+}
+
+.centered-content {
+  width: 90%; /* Adjust as needed */
+  max-width: 1200px; /* Adjust as needed */
+  margin: auto;
+  position: relative;
+  z-index: 2;
+  /* Add more styling as needed */
+}
