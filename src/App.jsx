@@ -10,6 +10,9 @@ import { useEffect, useState } from 'react';
 import MainLayout from './layouts/Main';
 import MinimalLayout from './layouts/Minimal';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const URL = import.meta.env.VITE_BACKEND_URL;
 
@@ -42,11 +45,15 @@ function App() {
       const respJson = await respFetch.json();
       console.log(respJson);
       const loginUser = respJson.find((result) => result.email == email);
-      console.log(loginUser);
-      setUser(loginUser);
-      navigate('/backgrounds');
+      if (loginUser) {
+        setUser(loginUser);
+        navigate('/backgrounds');
+      } else {
+        toast('Usuário ou senha inválido');
+      }
     } catch (err) {
-      return console.log(err);
+      console.log(err);
+      toast('Usuário ou senha inválido');
     }
   }
 
@@ -66,23 +73,26 @@ function App() {
   const isLogged = !!user;
 
   return (
-    <Routes>
-      <Route element={<MinimalLayout isLogged={isLogged} />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login onLogin={login} />} />
-      </Route>
-      <Route element={<MainLayout isLogged={isLogged} />}>
-        <Route path="/newProject" index element={<NewProject favBackgrounds={favBackgrounds} />} />
-        <Route path="/informacao" element={<Information />} />
-        <Route path="/usuarios" element={<Users />} />
-        <Route
-          path="/backgrounds"
-          element={
-            <Backgrounds favBackgrounds={favBackgrounds} onFavorite={onFavBackground} />
-          }
-        />
-      </Route>
-    </Routes>
+    <>
+      <ToastContainer />
+      <Routes>
+        <Route element={<MinimalLayout isLogged={isLogged} />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login onLogin={login} />} />
+        </Route>
+        <Route element={<MainLayout isLogged={isLogged} />}>
+          <Route path="/newProject" index element={<NewProject favBackgrounds={favBackgrounds} />} />
+          <Route path="/informacao" element={<Information />} />
+          <Route path="/usuarios" element={<Users />} />
+          <Route
+            path="/backgrounds"
+            element={
+              <Backgrounds favBackgrounds={favBackgrounds} onFavorite={onFavBackground} />
+            }
+          />
+        </Route>
+      </Routes>
+    </>
   );
 }
 
